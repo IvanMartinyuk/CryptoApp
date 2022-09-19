@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="CryptoApp.View.MainViewChild.CurrencyRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoApp.View.MainViewChild"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400">
+    <Grid>
+        <DockPanel>
+            <Image Source="https://assets.coincap.io/assets/icons/eth@2x.png"></Image>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold"
+                           Foreground="#289037"
+                           TextAlignment="Center">Bitcoin</TextBlock>
+                <TextBlock Foreground="#75c270"
+                           TextAlignment="Center"
+                           Margin="0 10 0 0">BTC</TextBlock>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,90 @@
+﻿<Window x:Class="CryptoApp.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:CryptoApp.ViewModel"
+        xmlns:local="clr-namespace:CryptoApp"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800"
+        MinHeight="350"
+        MinWidth="620"
+        WindowStyle="none"
+        ShowInTaskbar="False"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Window.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </Window.DataContext>
+    <Grid Background="#FFC0C3C9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="92*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Background="#FF16B694">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="151*"></ColumnDefinition>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1"
+                    Margin="10"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Command="{Binding CloseCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type Window}}}">
+                <Button.Content>
+                    <Border CornerRadius="10"
+                            Width="20"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            Padding="1">
+                        <TextBlock Text="X" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   Foreground="White"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" 
+              Background="#FFC0C3C9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="60*"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DockPanel Background="white"
+                        Grid.Column="1">
+                <ListBox Margin="10 10 10 0"
+                         ItemsSource="{Binding Currencies}"
+                         BorderBrush="{x:Null}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Vertical"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel >
+                                <Image Source="{Binding ImageUrl}"></Image>
+                                <StackPanel VerticalAlignment="Center"
+                                            HorizontalAlignment="Stretch">
+                                    <TextBlock FontWeight="Bold"
+                                                   Foreground="#289037"
+                                                   TextAlignment="Center"
+                                                   Text="{Binding Name}" Height="18"/>
+                                    <TextBlock Foreground="#75c270"
+                                                   TextAlignment="Center"
+                                                   Margin="0 10 0 0"
+                                                   Text="{Binding Symbol}"></TextBlock>
+                                </StackPanel>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

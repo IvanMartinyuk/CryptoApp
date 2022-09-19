@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CryptoApp
+namespace CryptoApp.View.MainViewChild
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CurrencyRow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CurrencyRow : UserControl
     {
-        public MainWindow()
+        public CurrencyRow()
         {
             InitializeComponent();
         }

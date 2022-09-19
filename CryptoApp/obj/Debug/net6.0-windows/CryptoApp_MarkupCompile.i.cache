@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\App.xaml
-11407045341
+21077785833
 
-5-661283747
-194-1103864946
-MainWindow.xaml;
+14-1503407689
+1952051190095
+View\MainView.xaml;View\MainViewChild\CurrencyRow.xaml;
 
-False
+True
 
