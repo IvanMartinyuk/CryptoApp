@@ -21,7 +21,12 @@ namespace CryptoApp
         public MainView()
         {
             InitializeComponent();
-            CoinCapParser.GetPage(0);
+            NetworkManager.GetPage(0);
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

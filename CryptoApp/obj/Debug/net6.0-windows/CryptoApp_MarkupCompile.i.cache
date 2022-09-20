@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\App.xaml
-21077785833
+4254688339
 
-14-1503407689
+162021259911
 1952051190095
-View\MainView.xaml;View\MainViewChild\CurrencyRow.xaml;
+View\CurrencyView.xaml;View\MainControl.xaml;View\MainView.xaml;View\Styles\Scrollbar.xaml;
 
 True
 

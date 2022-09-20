@@ -7,10 +7,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\MainView.xaml">
+    <Compile Update="View\CurrencyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MainControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\CurrencyView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainViewChild\CurrencyRow.xaml">
+    <Page Update="View\MainControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Styles\Scrollbar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

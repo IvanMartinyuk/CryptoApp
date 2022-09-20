@@ -12,6 +12,6 @@ namespace CryptoApp.Infrastructure
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged([CallerMemberName] string name = "") =>
-            PropertyChanged?.Invoke(name, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

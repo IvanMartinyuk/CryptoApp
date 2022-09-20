@@ -16,75 +16,78 @@
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
-    <Grid Background="#FFC0C3C9">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Focusable" Value="False"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="92*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
-              Background="#FF16B694">
+              Background="#FF16B694"
+              MouseLeftButtonDown="Grid_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="151*"></ColumnDefinition>
-                <ColumnDefinition Width="9*"></ColumnDefinition>
+                <ColumnDefinition Width="143*"></ColumnDefinition>
+                <ColumnDefinition Width="57*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1"
-                    Margin="10"
+
+            <DockPanel>
+                <Button Foreground="White"
                     Background="Transparent"
                     BorderBrush="Transparent"
+                    FontWeight="Bold" 
+                    FontSize="20"
+                    VerticalAlignment="Center"
+                    Command="{Binding LoadMainPage}"
+                    HorizontalAlignment="Left"
+                    Margin="10 0 10 0">Crypto App</Button>
+            </DockPanel>
+
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal" Height="18" Width="172">
+                <TextBlock Foreground="White" 
+                           FontWeight="Bold"
+                           TextAlignment="Center"
+                           Margin="0 0 15 0">Search</TextBlock>
+                <TextBox Width="120"
+                         Name="TextBox">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter"
+                                    Command="{Binding SearchCommand}"
+                                    CommandParameter="{Binding ElementName=TextBox, Path=Text}"></KeyBinding>
+                    </TextBox.InputBindings>
+                </TextBox>
+
+            </StackPanel>
+            <Button Margin="0,0,15,0"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
                     Command="{Binding CloseCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
                                         AncestorType={x:Type Window}}}">
                 <Button.Content>
                     <Border CornerRadius="10"
-                            Width="20"
-                            BorderBrush="White"
-                            BorderThickness="2"
-                            Padding="1">
+                                Width="20"
+                                BorderBrush="White"
+                                BorderThickness="2"
+                                Padding="1">
                         <TextBlock Text="X" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center" 
-                                   Foreground="White"/>
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       Foreground="White"/>
                     </Border>
                 </Button.Content>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" 
-              Background="#FFC0C3C9">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*"></ColumnDefinition>
-                <ColumnDefinition Width="60*"></ColumnDefinition>
-                <ColumnDefinition Width="20*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <DockPanel Background="white"
-                        Grid.Column="1">
-                <ListBox Margin="10 10 10 0"
-                         ItemsSource="{Binding Currencies}"
-                         BorderBrush="{x:Null}">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Vertical"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <DockPanel >
-                                <Image Source="{Binding ImageUrl}"></Image>
-                                <StackPanel VerticalAlignment="Center"
-                                            HorizontalAlignment="Stretch">
-                                    <TextBlock FontWeight="Bold"
-                                                   Foreground="#289037"
-                                                   TextAlignment="Center"
-                                                   Text="{Binding Name}" Height="18"/>
-                                    <TextBlock Foreground="#75c270"
-                                                   TextAlignment="Center"
-                                                   Margin="0 10 0 0"
-                                                   Text="{Binding Symbol}"></TextBlock>
-                                </StackPanel>
-                            </DockPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </DockPanel>
-        </Grid>
+        <UserControl Content="{Binding Control}"
+                     Grid.Row="1"></UserControl>
     </Grid>
 </Window>

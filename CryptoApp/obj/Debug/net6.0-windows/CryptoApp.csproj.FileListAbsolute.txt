@@ -1,6 +1,5 @@
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.csproj.AssemblyReference.cache
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainView.g.cs
-C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainViewChild\CurrencyRow.g.cs
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp_MarkupCompile.cache
@@ -12,7 +11,6 @@ C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\bin\Debug\net6.0-windows\CryptoAp
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\bin\Debug\net6.0-windows\CryptoApp.pdb
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainView.baml
-C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainViewChild\CurrencyRow.baml
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.g.resources
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.AssemblyInfoInputs.cache
@@ -24,3 +22,9 @@ C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\refint\C
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.pdb
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.genruntimeconfig.cache
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\ref\CryptoApp.dll
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\Styles\Scrollbar.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\App.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainControl.g.cs
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainControl.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\CurrencyView.g.cs
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\CurrencyView.baml
