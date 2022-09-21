@@ -13,8 +13,8 @@ namespace CryptoApp.Model
         public string ImageUrl { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }
-        public decimal priceUsd;
-        public decimal PriceUsd 
+        public double priceUsd;
+        public double PriceUsd 
         {
             get => priceUsd;
             set => priceUsd = Math.Round(value, 2);
@@ -31,5 +31,6 @@ namespace CryptoApp.Model
             get => priceChangePercent;
             set => priceChangePercent = Math.Round(value, 2);
         }
+        public string MarketURL { get; set; }
 }
 }

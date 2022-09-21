@@ -23,24 +23,29 @@
                    Margin="30"></Image>
             
             <TextBlock Margin="10 10 10 0"
-                       Foreground="#289037" 
+                       Foreground="#FF12A384" 
                        FontWeight="Bold">Name:</TextBlock>
             <TextBlock Margin="30 0 30 0"
                        Text="{Binding Currency.Name}"></TextBlock>
 
             <TextBlock Margin="10 10 10 0"
-                       Foreground="#289037" 
+                       Foreground="#FF12A384" 
                        FontWeight="Bold">Symbol:</TextBlock>
             <TextBlock Margin="30 0 30 0"
                        Text="{Binding Currency.Symbol}"></TextBlock>
             
             <TextBlock Margin="10 10 10 0"
-                       Foreground="#289037" 
+                       Foreground="#FF12A384" 
                        FontWeight="Bold">Price:</TextBlock>
-            <TextBlock Margin="30 0 30 0"
-                       Text="{Binding Currency.PriceUsd}"></TextBlock>
+
+            <WrapPanel>
+                <TextBlock Margin="30 0 0 0"
+                           Text="{Binding Currency.PriceUsd}"></TextBlock>
+                <TextBlock Margin="0 0 30 0">$</TextBlock>
+            </WrapPanel>
+            
             <TextBlock Margin="10 10 10 0"
-                       Foreground="#289037" 
+                       Foreground="#FF12A384" 
                        FontWeight="Bold">Price change percent:</TextBlock>
             <WrapPanel>
                 <TextBlock Margin="30 0 0 0"
@@ -49,10 +54,22 @@
             </WrapPanel>
 
             <TextBlock Margin="10 10 10 0"
-                       Foreground="#289037" 
+                       Foreground="#FF12A384" 
                        FontWeight="Bold">Volume:</TextBlock>
             <TextBlock Margin="30 0 30 0"
                        Text="{Binding Currency.Volume}"></TextBlock>
+
+            <Button Background="#FF12A384"
+                    Foreground="White"
+                    Margin="30 10 30 0"
+                    FontWeight="Bold"
+                    FontSize="15"
+                    Command="{Binding OpenBrowser}">
+                <Hyperlink Foreground="White" 
+                           FontWeight="Bold">
+                    Link
+                </Hyperlink>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

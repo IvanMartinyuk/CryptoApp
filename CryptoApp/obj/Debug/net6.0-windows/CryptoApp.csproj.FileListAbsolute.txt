@@ -28,3 +28,5 @@ C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\Mai
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainControl.baml
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\CurrencyView.g.cs
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\CurrencyView.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\ChartView.g.cs
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\ChartView.baml

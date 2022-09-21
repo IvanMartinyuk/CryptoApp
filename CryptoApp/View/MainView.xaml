@@ -10,7 +10,6 @@
         MinHeight="350"
         MinWidth="620"
         WindowStyle="none"
-        ShowInTaskbar="False"
         AllowsTransparency="True"
         Background="Transparent">
     <Window.DataContext>

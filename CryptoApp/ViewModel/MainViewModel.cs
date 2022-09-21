@@ -15,7 +15,7 @@ namespace CryptoApp.ViewModel
     {
         public ICommand CloseCommand { get; set; }
         public ICommand LoadMainPage { get; set; }
-        public ICommand SearchCommand { get; set; }
+        public ICommand SearchCommand { get; set; }        
         UserControl control;
         public UserControl Control 
         {
@@ -37,14 +37,6 @@ namespace CryptoApp.ViewModel
             }
         }
 
-        
-        //        try
-        //        {
-        //            MainControlViewModel vm = (MainControlViewModel)Control.DataContext;
-        //vm.Searching(searchText);
-        //        }
-        //        catch { }
-
         public MainViewModel()
         {
             Switcher.Content = this;
@@ -63,7 +55,12 @@ namespace CryptoApp.ViewModel
                     MainControlViewModel vm = (MainControlViewModel)Control.DataContext;
                     vm.Searching(x.ToString());
                 }
-                catch { }
+                catch {
+                    var view = new MainControl();                    
+                    MainControlViewModel vm = (MainControlViewModel)view.DataContext;
+                    vm.Searching(x.ToString());
+                    Switcher.Switch(view);
+                }
             });
         }
         public void Navigate(UserControl control)

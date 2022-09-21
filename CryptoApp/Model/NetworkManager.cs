@@ -33,16 +33,7 @@ namespace CryptoApp.Model
             JObject obj = JsonConvert.DeserializeObject<JObject>(await SendRequest(baseUrl + AssetsUrl));
             JArray arr = (JArray)obj["data"];
             foreach (JObject el in arr)
-                list.Add(new Currency()
-                {
-                    Id = el["id"].ToString(),
-                    Name = el["name"].ToString(),
-                    PriceUsd = Convert.ToDecimal(el["priceUsd"]),
-                    Symbol = el["symbol"].ToString(),
-                    ImageUrl = $"https://assets.coincap.io/assets/icons/{el["symbol"].ToString().ToLower()}@2x.png",
-                    PriceChangePercent = Convert.ToDouble(el["changePercent24Hr"]),
-                    Volume = Convert.ToDouble(el["volumeUsd24Hr"])
-                });
+                list.Add(FillCurrency(el));
             return list;
         }
         public static async Task<List<Currency>> Searching(string parametr)
@@ -60,21 +51,27 @@ namespace CryptoApp.Model
                     if (cur != null)
                     {
                         cur = (JObject)cur["data"];
-                        list.Add(new Currency()
-                        {
-                            Id = cur["id"].ToString(),
-                            Name = cur["name"].ToString(),
-                            PriceUsd = Convert.ToDecimal(cur["priceUsd"]),
-                            Symbol = cur["symbol"].ToString(),
-                            ImageUrl = $"https://assets.coincap.io/assets/icons/{cur["symbol"].ToString().ToLower()}@2x.png",
-                            PriceChangePercent = Convert.ToDouble(cur["changePercent24Hr"]),
-                            Volume = Convert.ToDouble(cur["volumeUsd24Hr"])
-                        });
+                        list.Add(FillCurrency(cur));
                     }
                 }
                 catch { }
             }
             return list;
+        }
+        private static Currency FillCurrency(JObject cur)
+        {
+            Currency currency = new Currency()
+            {
+                Id = cur["id"].ToString(),
+                Name = cur["name"].ToString(),
+                PriceUsd = Convert.ToDouble(cur["priceUsd"]),
+                Symbol = cur["symbol"].ToString(),
+                ImageUrl = $"https://assets.coincap.io/assets/icons/{cur["symbol"].ToString().ToLower()}@2x.png",
+                PriceChangePercent = Convert.ToDouble(cur["changePercent24Hr"]),
+                Volume = Convert.ToDouble(cur["volumeUsd24Hr"]),
+                MarketURL = "https://www.blockchain.com/explorer/assets/" + cur["symbol"].ToString()
+            };
+            return currency;
         }
         public static async Task<string> SendRequest(string uri)
         {
