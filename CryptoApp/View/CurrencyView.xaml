@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:vm="clr-namespace:CryptoApp.ViewModel"
              xmlns:local="clr-namespace:CryptoApp.View"
              mc:Ignorable="d" 
@@ -71,5 +72,14 @@
                 </Hyperlink>
             </Button>
         </StackPanel>
+        <Grid Grid.Column="1">
+            <lvc:CartesianChart Grid.Row="1">
+                <lvc:CartesianChart.Series>
+                    <lvc:LineSeries Values="{Binding Values}" 
+                                PointGeometrySize="0" 
+                                Configuration="{Binding Mapper}"/>
+                </lvc:CartesianChart.Series>
+            </lvc:CartesianChart>
+        </Grid>
     </Grid>
 </UserControl>

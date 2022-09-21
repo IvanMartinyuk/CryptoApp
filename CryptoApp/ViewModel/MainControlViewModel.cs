@@ -27,6 +27,8 @@ namespace CryptoApp.ViewModel
         int indexTo = -1;
         bool isSetFrom = false;
         bool isSetTo = false;
+        double countValue = 0;
+        double percentValue = 0;
         public ICommand CalculateFrom { get; set; }
         public ICommand CalculateTo { get; set; }
         public ICommand CalculateCommand { get; set; }
@@ -69,18 +71,6 @@ namespace CryptoApp.ViewModel
                 NotifyPropertyChanged();
             }
         }
-        //string countText;
-        //public string CountText
-        //{
-        //    get => countText;
-        //    set
-        //    {
-        //        countText = value;
-        //        NotifyPropertyChanged();
-        //    }
-        //}
-        double countValue = 0;
-        double percentValue = 0;
         public List<Currency> currencies = new List<Currency>();
         public List<Currency> Currencies
         {
@@ -145,6 +135,7 @@ namespace CryptoApp.ViewModel
                 CurrencyView cv = new CurrencyView();
                 CurrencyViewModel currencyViewModel = (CurrencyViewModel)cv.DataContext;
                 currencyViewModel.Currency = SelectedCurrency;
+                currencyViewModel.SetChart(SelectedCurrency.Id);
                 Switcher.Switch(cv);
             }
             if(i == 1)

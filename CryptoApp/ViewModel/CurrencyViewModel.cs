@@ -1,5 +1,9 @@
 ﻿using CryptoApp.Infrastructure;
 using CryptoApp.Model;
+using CryptoApp.View;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
+using LiveCharts;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +11,7 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -25,6 +30,26 @@ namespace CryptoApp.ViewModel
                 NotifyPropertyChanged();
             }
         }
+        ChartValues<ObservableValue> values;
+        public ChartValues<ObservableValue> Values
+        {
+            get => values;
+            set
+            {
+                values = value;
+                NotifyPropertyChanged();
+            }
+        }
+        CartesianMapper<ObservableValue> mapper;
+        public CartesianMapper<ObservableValue> Mapper
+        {
+            get => mapper;
+            set
+            {
+                mapper = value;
+                NotifyPropertyChanged();
+            }
+        }
         public CurrencyViewModel()
         {
             InitCommand();
@@ -40,6 +65,15 @@ namespace CryptoApp.ViewModel
                     UseShellExecute = true
                 });
             });
+        }
+        public void SetChart(string name)
+        {
+            Task<ChartValues<ObservableValue>> task = Task.Run(() => NetworkManager.GetHistory(name));
+            Values = task.Result;
+            Mapper = Mappers.Xy<ObservableValue>()
+                .X((item, index) => index)
+                .Y(item => item.Value);
+
         }
     }
 }

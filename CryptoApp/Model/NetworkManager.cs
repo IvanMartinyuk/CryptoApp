@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using LiveCharts.Defaults;
+using LiveCharts;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -87,6 +89,17 @@ namespace CryptoApp.Model
                 result = await response.Content.ReadAsStringAsync();
             }
             return result;
+        }
+        public static async Task<ChartValues<ObservableValue>> GetHistory(string name)
+        {
+            ChartValues<ObservableValue> values = new ChartValues<ObservableValue>();
+            JObject obj = JsonConvert.DeserializeObject<JObject>(await SendRequest(baseUrl + $"assets/{name}/history?interval=d1"));
+            JArray arr = (JArray)obj["data"];
+            for(int i = 0; i < arr.Count; i+=5)
+                values.Add(new ObservableValue(
+                                Math.Round(
+                                Convert.ToDouble(arr[i]["priceUsd"]), 2)));
+            return values;
         }
     }
 }
