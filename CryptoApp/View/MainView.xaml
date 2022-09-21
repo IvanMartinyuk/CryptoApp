@@ -52,7 +52,9 @@
                 <TextBlock Foreground="White" 
                            FontWeight="Bold"
                            TextAlignment="Center"
-                           Margin="0 0 15 0">Search</TextBlock>
+                           Margin="0 0 15 0"
+                           FontSize="16"
+                           VerticalAlignment="Center">Search</TextBlock>
                 <TextBox Width="120"
                          Name="TextBox">
                     <TextBox.InputBindings>

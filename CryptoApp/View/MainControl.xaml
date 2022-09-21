@@ -78,37 +78,44 @@
                     </StackPanel>
                 </WrapPanel>
                 <WrapPanel>
-                    <TextBlock Margin="20 20 0 8"
+                    <TextBlock Margin="15 20 0 8"
                                Foreground="#FF12A384"
-                               FontWeight="Bold">Count of</TextBlock>
+                               FontWeight="Bold"
+                               FontSize="14">Count of</TextBlock>
                     <TextBlock Text="{Binding CurrencyFromName}"
                                Margin="3 20 0 0"
                                Foreground="#FF12A384"
-                               FontWeight="Bold"></TextBlock>
+                               FontWeight="Bold"
+                               FontSize="14"></TextBlock>
                     <TextBox Width="100"
                              Margin="30 0 0 0"
                              Name="CountText"
+                             FontSize="14"
                              Tag="{Binding ElementName=PercentBox, Path=Text}"></TextBox>
                 </WrapPanel>
-                <TextBlock  Margin="20 20 0 8"
+                <TextBlock  Margin="15 20 0 8"
                             Foreground="#FF12A384"
-                            FontWeight="Bold">Percent of commision</TextBlock>
+                            FontWeight="Bold"
+                            FontSize="14">Commission</TextBlock>
                 <TextBox Width="100"
                          Margin="3 0 0 0"
+                         FontSize="14"
                          Name="PercentBox"></TextBox>
                 <Button Margin="40 5 40 0"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Foreground="White"
+                        FontSize="14"
                         Command="{Binding CalculateCommand}"
-                        CommandParameter="{Binding ElementName=CountText}">Calculate
-                </Button>
-                <TextBlock Margin="20 20 20 8"
+                        CommandParameter="{Binding ElementName=CountText}">Calculate</Button>
+                <TextBlock Margin="15 20 20 8"
                            Foreground="#FF12A384"
-                           FontWeight="Bold">Result</TextBlock>
+                           FontWeight="Bold"
+                           FontSize="14">Result</TextBlock>
                 <TextBlock Margin="33 0 0 0"
                            Text="{Binding CalculateResult}"
-                           Foreground="White"></TextBlock>
+                           Foreground="White"
+                           FontSize="14"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>
