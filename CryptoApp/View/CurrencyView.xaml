@@ -16,62 +16,56 @@
             <ColumnDefinition Width="117*"></ColumnDefinition>
             <ColumnDefinition Width="283*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0"
-                    Background="#FFD1D1D1">
-            <Image Width="64"
-                   Height="64"
-                   Source="{Binding Currency.ImageUrl}"
-                   Margin="30"></Image>
+        <DockPanel>
+            <StackPanel Grid.Column="0"
+                        Style="{DynamicResource SidePanel}">
+                <Image Width="64"
+                       Height="64"
+                       Source="{Binding Currency.ImageUrl}"
+                       Margin="30"></Image>
             
-            <TextBlock Margin="10 10 10 0"
-                       Foreground="#FF12A384" 
-                       FontWeight="Bold">Name:</TextBlock>
-            <TextBlock Margin="30 0 30 0"
-                       Text="{Binding Currency.Name}"></TextBlock>
+                <TextBlock Margin="10 10 10 0"
+                           Style="{DynamicResource DescriptionText}">Name:</TextBlock>
+                <TextBlock Margin="30 0 30 0"
+                           Text="{Binding Currency.Name}"></TextBlock>
 
-            <TextBlock Margin="10 10 10 0"
-                       Foreground="#FF12A384" 
-                       FontWeight="Bold">Symbol:</TextBlock>
-            <TextBlock Margin="30 0 30 0"
-                       Text="{Binding Currency.Symbol}"></TextBlock>
+                <TextBlock Margin="10 10 10 0"
+                           Style="{DynamicResource DescriptionText}">Symbol:</TextBlock>
+                <TextBlock Margin="30 0 30 0"
+                           Text="{Binding Currency.Symbol}"></TextBlock>
             
-            <TextBlock Margin="10 10 10 0"
-                       Foreground="#FF12A384" 
-                       FontWeight="Bold">Price:</TextBlock>
+                <TextBlock Margin="10 10 10 0"
+                           Style="{DynamicResource DescriptionText}">Price:</TextBlock>
 
-            <WrapPanel>
-                <TextBlock Margin="30 0 0 0"
-                           Text="{Binding Currency.PriceUsd}"></TextBlock>
-                <TextBlock Margin="0 0 30 0">$</TextBlock>
-            </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Margin="30 0 0 0"
+                               Text="{Binding Currency.PriceUsd}"></TextBlock>
+                    <TextBlock Margin="0 0 30 0">$</TextBlock>
+                </WrapPanel>
             
-            <TextBlock Margin="10 10 10 0"
-                       Foreground="#FF12A384" 
-                       FontWeight="Bold">Price change percent:</TextBlock>
-            <WrapPanel>
-                <TextBlock Margin="30 0 0 0"
-                            Text="{Binding Currency.PriceChangePercent}"></TextBlock>
-                <TextBlock Margin="0 0 30 0">%</TextBlock>
-            </WrapPanel>
+                <TextBlock Margin="10 10 10 0"
+                           Style="{DynamicResource DescriptionText}">Price change percent:</TextBlock>
+                <WrapPanel>
+                    <TextBlock Margin="30 0 0 0"
+                                Text="{Binding Currency.PriceChangePercent}"></TextBlock>
+                    <TextBlock Margin="0 0 30 0">%</TextBlock>
+                </WrapPanel>
 
-            <TextBlock Margin="10 10 10 0"
-                       Foreground="#FF12A384" 
-                       FontWeight="Bold">Volume:</TextBlock>
-            <TextBlock Margin="30 0 30 0"
-                       Text="{Binding Currency.Volume}"></TextBlock>
+                <TextBlock Margin="10 10 10 0"
+                           Style="{DynamicResource DescriptionText}">Volume:</TextBlock>
+                <TextBlock Margin="30 0 30 0"
+                           Text="{Binding Currency.Volume}"></TextBlock>
 
-            <Button Background="#FF12A384"
-                    Foreground="White"
-                    Margin="30 10 30 0"
-                    FontWeight="Bold"
-                    FontSize="15"
-                    Command="{Binding OpenBrowser}">
-                <Hyperlink Foreground="White" 
-                           FontWeight="Bold">
-                    Link
-                </Hyperlink>
-            </Button>
-        </StackPanel>
+                <Button Style="{DynamicResource LinkBtn}"
+                        Margin="30 10 30 0"
+                        Command="{Binding OpenBrowser}">
+                    <Hyperlink Foreground="White" 
+                               FontWeight="Bold">
+                        Link
+                    </Hyperlink>
+                </Button>
+            </StackPanel>
+        </DockPanel>
         <Grid Grid.Column="1">
             <lvc:CartesianChart Grid.Row="1">
                 <lvc:CartesianChart.Series>

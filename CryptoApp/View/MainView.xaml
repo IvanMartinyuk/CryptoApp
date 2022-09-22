@@ -15,45 +15,42 @@
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
-    <Window.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Focusable" Value="False"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="92*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
-              Background="#FF16B694"
+              Style="{DynamicResource MainPanel}"
               MouseLeftButtonDown="Grid_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="143*"></ColumnDefinition>
                 <ColumnDefinition Width="57*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <DockPanel>
-                <Button Foreground="White"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    FontWeight="Bold" 
-                    FontSize="20"
-                    VerticalAlignment="Center"
-                    Command="{Binding LoadMainPage}"
-                    HorizontalAlignment="Left"
-                    Margin="10 0 10 0">Crypto App</Button>
+            <DockPanel Background="Transparent">
+                <Button Style="{DynamicResource MainPageBtn}"
+                        VerticalAlignment="Center"
+                        Command="{Binding LoadMainPage}"
+                        HorizontalAlignment="Left"
+                        Margin="10 0 10 0">Crypto App</Button>
+                <Button HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        Margin="10"
+                        BorderBrush="Transparent"
+                        Command="{Binding ChangeMode}">
+                    <Image Source="{Binding ModeIcon}"></Image>
+                </Button>
             </DockPanel>
 
             <StackPanel Grid.Column="1"
                         HorizontalAlignment="Left" 
                         VerticalAlignment="Center"
                         Orientation="Horizontal" Height="18" Width="172">
-                <TextBlock Foreground="White" 
-                           FontWeight="Bold"
+                <TextBlock FontWeight="Bold"
                            TextAlignment="Center"
                            Margin="0 0 15 0"
-                           FontSize="16"
                            VerticalAlignment="Center">Search</TextBlock>
                 <TextBox Width="120"
                          Name="TextBox">
@@ -67,23 +64,20 @@
             </StackPanel>
             <Button Margin="0,0,15,0"
                     Grid.Column="1"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
+                    Style="{DynamicResource DefaultBtn}"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
                     Command="{Binding CloseCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
                                         AncestorType={x:Type Window}}}">
                 <Button.Content>
-                    <Border CornerRadius="10"
-                                Width="20"
-                                BorderBrush="White"
+                    <Border CornerRadius="15"
+                                Width="25"
                                 BorderThickness="2"
                                 Padding="1">
                         <TextBlock Text="X" 
                                        HorizontalAlignment="Center" 
-                                       VerticalAlignment="Center" 
-                                       Foreground="White"/>
+                                       VerticalAlignment="Center"/>
                     </Border>
                 </Button.Content>
             </Button>

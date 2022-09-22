@@ -22,7 +22,6 @@ C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\refint\C
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.pdb
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\CryptoApp.genruntimeconfig.cache
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\ref\CryptoApp.dll
-C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\Styles\Scrollbar.baml
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\App.baml
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainControl.g.cs
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\MainControl.baml
@@ -30,3 +29,6 @@ C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\Cur
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\View\CurrencyView.baml
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\bin\Debug\net6.0-windows\LiveCharts.dll
 C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\Themes\Scrollbar.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\Themes\Light.baml
+C:\Users\Ivan\source\repos\CryptoApp\CryptoApp\obj\Debug\net6.0-windows\Themes\Dark.baml

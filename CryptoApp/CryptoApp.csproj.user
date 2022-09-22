@@ -15,13 +15,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Themes\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Light.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\CurrencyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Styles\Scrollbar.xaml">
+    <Page Update="Themes\Scrollbar.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView.xaml">
