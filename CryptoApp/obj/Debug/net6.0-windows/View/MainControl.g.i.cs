@@ -70,7 +70,7 @@ namespace CryptoApp.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CryptoApp;component/view/maincontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CryptoApp;V1.0.0.0;component/view/maincontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\MainControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
